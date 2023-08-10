@@ -1,0 +1,12 @@
+<div class="container">
+  <ng-container *ngIf="type && type === 'youtube'">
+    <div class="video" [innerHTML]="getEmbeddedVideoLink(srcLink, width, height) | embedSanityze"></div>
+  </ng-container>
+  <ng-container *ngIf="!type">
+    <img [src]="srcLink"
+         [style]="{
+       width: width*resize + 'px',
+       height: height*resize + 'px'
+       }" alt="">
+  </ng-container>
+</div>
